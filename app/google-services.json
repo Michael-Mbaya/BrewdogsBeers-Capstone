@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "731442950655",
+    "firebase_url": "https://brewsbeers-capstone.firebaseio.com",
+    "project_id": "brewsbeers-capstone",
+    "storage_bucket": "brewsbeers-capstone.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:731442950655:android:195876f11f3b6de81e77ca",
+        "android_client_info": {
+          "package_name": "com.example.brewbeers"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "731442950655-dpa5mufbuqh4rkmp2kjsv79oh18lbpmd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.brewbeers",
+            "certificate_hash": "b2a5f3353873739652d9d14685e7d328041b6698"
+          }
+        },
+        {
+          "client_id": "731442950655-rtompinc44aemn3gg8su8intt4mfbthd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAg4BzigV2nYNMDEJgUqSfchPAOF9ZqKy8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "731442950655-rtompinc44aemn3gg8su8intt4mfbthd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

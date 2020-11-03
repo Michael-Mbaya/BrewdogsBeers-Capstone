@@ -6,7 +6,7 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
-public interface LotrAPI {
+public interface BeerAPI {
 
     @GET("character")
     Call<MyPreciousResponse> getBeers(

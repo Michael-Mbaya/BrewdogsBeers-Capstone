@@ -1,4 +1,4 @@
-package com.example.brewbeers;
+package com.example.brewbeers.ui.lists;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,11 +12,12 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.brewbeers.adapters.BeersCustomListAdapter;
+import com.example.brewbeers.R;
+import com.example.brewbeers.adapters.BeersCustomAdapter;
 import com.example.brewbeers.models.Doc;
 import com.example.brewbeers.models.MyPreciousResponse;
-import com.example.brewbeers.network.LotrAPI;
-import com.example.brewbeers.network.LotrClient;
+import com.example.brewbeers.network.BeerAPI;
+import com.example.brewbeers.network.BeerClient;
 
 import java.util.List;
 
@@ -52,7 +53,7 @@ public class BeersActivity extends AppCompatActivity {
         mWlcome.setText("Welcome "+input+"!");
 
         //apicall
-        LotrAPI client = LotrClient.getClient();
+        BeerAPI client = BeerClient.getClient();
         Call<MyPreciousResponse> call = client.getBeers(); //query abv_gt Double alcoholByVolume greater than the given
 
         //call response and/or failure
@@ -85,7 +86,7 @@ public class BeersActivity extends AppCompatActivity {
 
                     //Custom adapter
                     ArrayAdapter adapter
-                            = new BeersCustomListAdapter(BeersActivity.this, android.R.layout.simple_list_item_1, characterNames, characterRaces);
+                            = new BeersCustomAdapter(BeersActivity.this, android.R.layout.simple_list_item_1, characterNames, characterRaces);
                     mBeersList.setAdapter(adapter);
 
 
@@ -100,7 +101,7 @@ public class BeersActivity extends AppCompatActivity {
         });
 
         ArrayAdapter adapter
-                = new BeersCustomListAdapter(BeersActivity.this, android.R.layout.simple_list_item_1, tracksFound, tracksArtist);
+                = new BeersCustomAdapter(BeersActivity.this, android.R.layout.simple_list_item_1, tracksFound, tracksArtist);
         mBeersList.setAdapter(adapter);
 
         mBeersList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -117,5 +118,5 @@ public class BeersActivity extends AppCompatActivity {
 
 //adapter
 //    ArrayAdapter adapter
-//            = new BeersCustomListAdapter(BeersActivity.this, android.R.layout.simple_list_item_1, tracksFound, tracksArtist);
+//            = new BeersCustomAdapter(BeersActivity.this, android.R.layout.simple_list_item_1, tracksFound, tracksArtist);
 //        mBeersList.setAdapter(adapter);

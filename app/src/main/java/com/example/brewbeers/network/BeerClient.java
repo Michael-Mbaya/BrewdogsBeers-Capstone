@@ -12,11 +12,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 //import static com.example.brewbeers.Constants.BEERS_BASE_URL;
 import static com.example.brewbeers.Constants.LOTR_BASE_URL;
 
-public class LotrClient {
+public class BeerClient {
 
     private static Retrofit retrofit = null;
 
-    public static LotrAPI getClient() {
+    public static BeerAPI getClient() {
 
         if (retrofit == null) {
             OkHttpClient okHttpClient = new OkHttpClient.Builder()
@@ -41,7 +41,7 @@ public class LotrClient {
                     .build();
         }
 
-        return retrofit.create(LotrAPI.class);
+        return retrofit.create(BeerAPI.class);
     }
 
 }

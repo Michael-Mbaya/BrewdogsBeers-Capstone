@@ -5,5 +5,11 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="blackLogo">#FD070707</color>
     <color name="brownBrewsdog">#8C3636</color>
-    <color name="buttons">#3F51B5</color>
+    <color name="buttonsBG">#3F51B5</color>
+    <color name="blackest">#000000</color>
+    <color name="Whitest">#FFFFFFFF</color>
+    <color name="hints">#8E8B8B</color>
+    <color name="logins">#FF9800</color>
+    <color name="reddest">#FF0000</color>
+    <color name="neutral">#FFD6C7C7</color>
 </resources>
