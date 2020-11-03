@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.example.brewbeers.R;
 import com.example.brewbeers.ui.accounts.LoginActivity;
 import com.example.brewbeers.ui.lists.BeersActivity;
+import com.example.brewbeers.ui.lists.OtherList;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //
 
     }
+
     //clicklisteners actions onClick
     @Override
     public void onClick(View v) {
@@ -64,11 +66,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(MainActivity.this, "Text is Required", Toast.LENGTH_LONG).show();
             }else {
                 String myNameIs = mEditTextMain.getText().toString();
-                Intent intent = new Intent(MainActivity.this, BeersActivity.class);
+//                Intent intent = new Intent(MainActivity.this, BeersActivity.class);
+                Intent other = new Intent(MainActivity.this, OtherList.class);
                 //pass data with intent extras
-                intent.putExtra("myName", myNameIs);
+//                intent.putExtra("myName", myNameIs);
+                other.putExtra("myName", myNameIs);
                 //go to search activity
-                startActivity(intent);
+//                startActivity(intent);
+                startActivity(other);
                 Toast.makeText(MainActivity.this, "Welcome " + myNameIs+"!", Toast.LENGTH_LONG).show();
             }
 

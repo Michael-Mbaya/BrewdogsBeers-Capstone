@@ -1,7 +1,9 @@
 
-package com.example.brewbeers.models;
+package com.example.brewbeers.models.prev;
 
 import java.util.List;
+
+import com.example.brewbeers.models.prev.Doc;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 

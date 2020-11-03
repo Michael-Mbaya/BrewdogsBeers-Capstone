@@ -14,8 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.brewbeers.R;
 import com.example.brewbeers.adapters.BeersCustomAdapter;
-import com.example.brewbeers.models.Doc;
-import com.example.brewbeers.models.MyPreciousResponse;
+import com.example.brewbeers.models.prev.Doc;
+import com.example.brewbeers.models.prev.MyPreciousResponse;
 import com.example.brewbeers.network.BeerAPI;
 import com.example.brewbeers.network.BeerClient;
 
@@ -54,7 +54,7 @@ public class BeersActivity extends AppCompatActivity {
 
         //apicall
         BeerAPI client = BeerClient.getClient();
-        Call<MyPreciousResponse> call = client.getBeers(); //query abv_gt Double alcoholByVolume greater than the given
+        Call<MyPreciousResponse> call = client.getChars(); //query abv_gt Double alcoholByVolume greater than the given
 
         //call response and/or failure
         call.enqueue(new Callback<MyPreciousResponse>() {

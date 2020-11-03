@@ -10,6 +10,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 //import static com.example.brewbeers.Constants.BEERS_BASE_URL;
+import static com.example.brewbeers.Constants.BEERS_BASE_URL;
 import static com.example.brewbeers.Constants.LOTR_BASE_URL;
 
 public class BeerClient {
@@ -24,10 +25,6 @@ public class BeerClient {
                         @Override
                         public Response intercept(Chain chain) throws IOException {
                             Request newRequest  = chain.request().newBuilder()
-                                    .addHeader("Authorization", "Bearer 4ykLdI43GlXwdWty_0Vy") //Bearer 4ykLdI43GlXwdWty_0Vy
-                                    .addHeader("Access-Control-Allow-Origin","*")
-                                    .addHeader("Access-Control-Allow-Headers","Access-Control-Request-Headers")
-                                    .addHeader("Access-Control-Allow-Methods","Access-Control-Request-Method")
                                     .build();
                             return chain.proceed(newRequest);
                         }
@@ -35,7 +32,7 @@ public class BeerClient {
                     .build();
 
             retrofit = new Retrofit.Builder()
-                    .baseUrl(LOTR_BASE_URL)
+                    .baseUrl(BEERS_BASE_URL)
                     .client(okHttpClient)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
