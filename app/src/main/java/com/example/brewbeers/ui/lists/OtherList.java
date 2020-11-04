@@ -58,10 +58,7 @@ public class OtherList extends AppCompatActivity {
 //        mBeersRecycler.setLayoutManager(new LinearLayoutManager(this));
 
         getResponse();
-        beersAdapter = new BeersAdapter(OtherList.this,beersModels);
-        mBeersRecycler.setLayoutManager(new LinearLayoutManager(this));
-        mBeersRecycler.setAdapter(beersAdapter);
-        mBeersRecycler.setHasFixedSize(true);
+
     }
 
     private void getResponse() {
@@ -74,7 +71,10 @@ public class OtherList extends AppCompatActivity {
             public void onResponse(Call<List<BeersModel>> call, Response<List<BeersModel>> response) {
                 Log.d("On Response","Got Response");
                 beersModels = new ArrayList<>(response.body());
-
+                beersAdapter = new BeersAdapter(OtherList.this,beersModels);
+                mBeersRecycler.setLayoutManager(new LinearLayoutManager(OtherList.this));
+                mBeersRecycler.setAdapter(beersAdapter);
+                mBeersRecycler.setHasFixedSize(true);
             }
 
             @Override
