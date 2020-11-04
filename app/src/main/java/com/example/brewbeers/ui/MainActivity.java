@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import com.example.brewbeers.R;
 import com.example.brewbeers.ui.accounts.LoginActivity;
-import com.example.brewbeers.ui.lists.BeersActivity;
+//import com.example.brewbeers.ui.lists.BeersActivity;
 import com.example.brewbeers.ui.lists.OtherList;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
