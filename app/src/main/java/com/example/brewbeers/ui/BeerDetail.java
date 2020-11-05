@@ -52,4 +52,10 @@ public class BeerDetail extends AppCompatActivity {
         tagDetail.setText(tag);
 
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
 }

@@ -47,11 +47,7 @@ public class OtherList extends AppCompatActivity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_beers);
         ButterKnife.bind(this);
-//        //getting/pull data from intent extra
-//        Intent intent = getIntent();
-//        String input = intent.getStringExtra("myName");
-//        mWlcome.setText("Welcome "+input+"!");
-        //
+
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener(){
             @Override
@@ -141,4 +137,10 @@ public class OtherList extends AppCompatActivity implements View.OnClickListener
         mAuth.removeAuthStateListener(mAuthListener);
     }
 
+//    @Override
+//    protected void onRestart() {
+//        super.onRestart();
+//        mBeersRecycler.setLayoutManager(new LinearLayoutManager(this));
+//        getResponse();
+//    }
 }

@@ -4,8 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/blackest"
-    android:orientation="horizontal">
+    android:background="@color/Whitest"
+    android:orientation="horizontal"
+    android:paddingStart="2dp"
+    android:paddingTop="1dp"
+    android:paddingEnd="2dp"
+    android:paddingBottom="1dp">
 
 
     <LinearLayout
