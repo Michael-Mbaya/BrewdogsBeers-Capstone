@@ -27,10 +27,10 @@ import butterknife.ButterKnife;
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = LoginActivity.class.getSimpleName();
 
-    @BindView(R.id.registerTextView) TextView goSignUp;
-    @BindView(R.id.loginButton) Button loginButton;
-    @BindView(R.id.emailEditText) EditText emailEditText;
-    @BindView(R.id.passwordEditText) EditText passwordEditText;
+    @BindView(R.id.registerTextView2) TextView goSignUp;
+    @BindView(R.id.loginButton2) Button loginButton;
+    @BindView(R.id.emailEditText2) EditText emailEditText;
+    @BindView(R.id.passwordEditText2) EditText passwordEditText;
     private FirebaseAuth auth;
     private FirebaseAuth.AuthStateListener authStateListener;
     private ProgressDialog progressDialog;
@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.login);
         ButterKnife.bind(this);
         //View clickListeners
         goSignUp.setOnClickListener(this);

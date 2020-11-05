@@ -60,10 +60,10 @@ public class BeersAdapter extends RecyclerView.Adapter<BeersAdapter.ViewHolder> 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             //
-            beerImage = (ImageView) itemView.findViewById(R.id.beerImageView);
-            beerName = (TextView) itemView.findViewById(R.id.beerNameTextView);
-            beerTag = (TextView) itemView.findViewById(R.id.taglineTextView);
-            beerDescription = (TextView) itemView.findViewById(R.id.descriptionTextView);
+            beerImage = itemView.findViewById(R.id.beerImageView);
+            beerName = itemView.findViewById(R.id.beerNameTextView);
+            beerTag = itemView.findViewById(R.id.taglineTextView);
+            beerDescription = itemView.findViewById(R.id.descriptionTextView);
             //
         }
     }

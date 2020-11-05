@@ -55,8 +55,7 @@ public class OtherList extends AppCompatActivity {
         String input = intent.getStringExtra("myName");
         mWlcome.setText("Welcome "+input+"!");
 
-//        mBeersRecycler.setLayoutManager(new LinearLayoutManager(this));
-
+        mBeersRecycler.setLayoutManager(new LinearLayoutManager(this));
         getResponse();
 
     }
@@ -72,7 +71,6 @@ public class OtherList extends AppCompatActivity {
                 Log.d("On Response","Got Response");
                 beersModels = new ArrayList<>(response.body());
                 beersAdapter = new BeersAdapter(OtherList.this,beersModels);
-                mBeersRecycler.setLayoutManager(new LinearLayoutManager(OtherList.this));
                 mBeersRecycler.setAdapter(beersAdapter);
                 mBeersRecycler.setHasFixedSize(true);
             }
