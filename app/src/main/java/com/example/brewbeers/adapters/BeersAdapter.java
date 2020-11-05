@@ -7,15 +7,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.brewbeers.DetailActivity;
 import com.example.brewbeers.R;
 import com.example.brewbeers.models.BeersModel;
-import com.example.brewbeers.ui.BeerDetail;
 import com.squareup.picasso.Picasso;
+
+import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
@@ -66,24 +67,31 @@ public class BeersAdapter extends RecyclerView.Adapter<BeersAdapter.ViewHolder> 
             beerImage = itemView.findViewById(R.id.beerImageView);
             beerName = itemView.findViewById(R.id.beerNameTextView);
             beerTag = itemView.findViewById(R.id.taglineTextView);
-            beerDescription = itemView.findViewById(R.id.descriptionTextView);
+            beerDescription = itemView.findViewById(R.id.firstBrewTextView);
             //
             itemView.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
-            int position = getAdapterPosition();
-            Toast.makeText(context,"clicked position: "+position,Toast.LENGTH_SHORT).show();
-            Intent detail = new Intent(context, BeerDetail.class);
-            detail.putExtra("name",beersModels.get(position).getName());
-            detail.putExtra("image",beersModels.get(position).getImageUrl());
-            detail.putExtra("tag",beersModels.get(position).getTagline());
-            detail.putExtra("firstBrewed",beersModels.get(position).getFirstBrewed());
-            detail.putExtra("abv",beersModels.get(position).getAbv().toString());
-            detail.putExtra("description",beersModels.get(position).getDescription());
-            detail.putExtra("tips",beersModels.get(position).getBrewersTips());
-            context.startActivity(detail);
+//            int position = getAdapterPosition();
+//            Toast.makeText(context,"clicked position: "+position,Toast.LENGTH_SHORT).show();
+//            Intent detail = new Intent(context, BeerDetail.class);
+//            detail.putExtra("name",beersModels.get(position).getName());
+//            detail.putExtra("image",beersModels.get(position).getImageUrl());
+//            detail.putExtra("tag",beersModels.get(position).getTagline());
+//            detail.putExtra("firstBrewed",beersModels.get(position).getFirstBrewed());
+//            detail.putExtra("abv",beersModels.get(position).getAbv().toString());
+//            detail.putExtra("description",beersModels.get(position).getDescription());
+//            detail.putExtra("tips",beersModels.get(position).getBrewersTips());
+//            context.startActivity(detail);
+
+            int itemPosition = getLayoutPosition();
+            Intent intent = new Intent(context, DetailActivity.class);
+            intent.putExtra("position", itemPosition);
+            intent.putExtra("characters", Parcels.wrap(beersModels));
+            context.startActivity(intent);
+
         }
     }
 }

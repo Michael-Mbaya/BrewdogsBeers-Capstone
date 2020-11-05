@@ -40,6 +40,7 @@ public class OtherList extends AppCompatActivity implements View.OnClickListener
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     @BindView(R.id.beerButton) Button mBeers;
+    @BindView(R.id.savedButton) Button mSaves;
     @BindView(R.id.beerRecycler) RecyclerView mBeersRecycler;
 
     @Override
@@ -62,6 +63,7 @@ public class OtherList extends AppCompatActivity implements View.OnClickListener
         };
         //
         mBeers.setOnClickListener(this);
+        mSaves.setOnClickListener(this);
 
 
     }
@@ -71,6 +73,10 @@ public class OtherList extends AppCompatActivity implements View.OnClickListener
     if(v == mBeers){
         mBeersRecycler.setLayoutManager(new LinearLayoutManager(this));
         getResponse();
+    }
+    if(v == mSaves){
+        Intent intent = new Intent(OtherList.this, SavedList.class);
+        startActivity(intent);
     }
     }
 

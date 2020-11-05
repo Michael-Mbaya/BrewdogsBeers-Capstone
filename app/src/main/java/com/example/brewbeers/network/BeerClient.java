@@ -11,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 //import static com.example.brewbeers.Constants.BEERS_BASE_URL;
 import static com.example.brewbeers.Constants.BEERS_BASE_URL;
-import static com.example.brewbeers.Constants.LOTR_BASE_URL;
+//import static com.example.brewbeers.Constants.LOTR_BASE_URL;
 
 public class BeerClient {
 

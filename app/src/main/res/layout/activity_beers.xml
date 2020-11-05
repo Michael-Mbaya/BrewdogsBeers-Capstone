@@ -26,13 +26,14 @@
             app:layout_constraintTop_toTopOf="parent">
 
         </androidx.recyclerview.widget.RecyclerView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
         android:layout_width="0dp"
         android:layout_height="91dp"
-        android:background="@drawable/dark_bricks"
+        android:background="@drawable/beer_float"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -41,15 +42,28 @@
         app:layout_constraintVertical_bias="0.0">
 
         <Button
+            android:id="@+id/savedButton"
+            android:layout_width="183dp"
+            android:layout_height="49dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/rounded_corner"
+            android:text="Saved"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.38" />
+
+        <Button
             android:id="@+id/beerButton"
-            android:layout_width="208dp"
-            android:layout_height="50dp"
+            android:layout_width="157dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="16dp"
             android:background="@drawable/rounded_corner"
             android:text="See Beers"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.38" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

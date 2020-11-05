@@ -7,8 +7,15 @@ import com.example.brewbeers.models.*;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class BeersModel {
+import org.parceler.Parcel;
 
+@Parcel
+public class BeersModel {
+    //
+    private String pushId;
+    //index
+    String index;
+    //
     @SerializedName("id")
     @Expose
     private Integer id;
@@ -127,6 +134,25 @@ public class BeersModel {
         this.foodPairing = foodPairing;
         this.brewersTips = brewersTips;
         this.contributedBy = contributedBy;
+        //
+        this.index = "not_specified";
+        //
+    }
+
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
+    }
+
+    public String getIndex() {
+        return index;
+    }
+
+    public void setIndex(String index) {
+        this.index = index;
     }
 
     public Integer getId() {
