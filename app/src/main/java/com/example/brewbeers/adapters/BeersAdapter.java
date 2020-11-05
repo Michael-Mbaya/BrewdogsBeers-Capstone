@@ -1,17 +1,20 @@
 package com.example.brewbeers.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.brewbeers.R;
 import com.example.brewbeers.models.BeersModel;
+import com.example.brewbeers.ui.BeerDetail;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -52,7 +55,7 @@ public class BeersAdapter extends RecyclerView.Adapter<BeersAdapter.ViewHolder> 
 //        return 0;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         //
         private ImageView beerImage;
         private TextView beerName, beerTag, beerDescription;
@@ -65,6 +68,22 @@ public class BeersAdapter extends RecyclerView.Adapter<BeersAdapter.ViewHolder> 
             beerTag = itemView.findViewById(R.id.taglineTextView);
             beerDescription = itemView.findViewById(R.id.descriptionTextView);
             //
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            int position = getAdapterPosition();
+            Toast.makeText(context,"clicked position: "+position,Toast.LENGTH_SHORT).show();
+            Intent detail = new Intent(context, BeerDetail.class);
+            detail.putExtra("name",beersModels.get(position).getName());
+            detail.putExtra("image",beersModels.get(position).getImageUrl());
+            detail.putExtra("tag",beersModels.get(position).getTagline());
+            detail.putExtra("firstBrewed",beersModels.get(position).getFirstBrewed());
+            detail.putExtra("abv",beersModels.get(position).getAbv().toString());
+            detail.putExtra("description",beersModels.get(position).getDescription());
+            detail.putExtra("tips",beersModels.get(position).getBrewersTips());
+            context.startActivity(detail);
         }
     }
 }

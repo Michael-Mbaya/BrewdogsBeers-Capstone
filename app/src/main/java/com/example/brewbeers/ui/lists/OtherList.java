@@ -12,21 +12,13 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.brewbeers.R;
 import com.example.brewbeers.adapters.BeersAdapter;
-import com.example.brewbeers.adapters.BeersCustomAdapter;
 import com.example.brewbeers.models.BeersModel;
 import com.example.brewbeers.network.BeerAPI;
 import com.example.brewbeers.network.BeerClient;
-import com.example.brewbeers.ui.MainActivity;
 import com.example.brewbeers.ui.accounts.LoginActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -39,10 +31,6 @@ import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-
-import static com.example.brewbeers.Constants.BEERS_BASE_URL;
 
 public class OtherList extends AppCompatActivity implements View.OnClickListener{
     public static final String TAG = OtherList.class.getSimpleName();

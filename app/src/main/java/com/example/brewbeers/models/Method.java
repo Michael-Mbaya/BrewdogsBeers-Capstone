@@ -54,7 +54,11 @@ public class Method {
     }
 
     public Object getTwist() {
-        return twist;
+        if(twist == null){
+            return "Private Info";
+        }else {
+            return twist;
+        }
     }
 
     public void setTwist(Object twist) {
