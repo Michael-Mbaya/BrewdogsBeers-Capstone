@@ -12,9 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ui.lists.OtherList">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.MainActivity"/>
+<!--            <meta-data-->
+<!--                android:name="android.support.PARENT_ACTIVITY"-->
+<!--                android:value=".ui.accounts.LoginActivity"/>-->
         </activity>
         <activity android:name=".ui.accounts.SignUpActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".ui.accounts.LoginActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar">

@@ -25,59 +25,25 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     public static final String TAG = MainActivity.class.getSimpleName();
-
-    @BindView(R.id.nextActButton) Button mButtonMain;
-    @BindView(R.id.editText) EditText mEditTextMain;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
+//    @BindView(R.id.nextActButton) Button mButtonMain;
+//    @BindView(R.id.editText) EditText mEditTextMain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        //
-        mAuth = FirebaseAuth.getInstance();
-        mAuthListener = new FirebaseAuth.AuthStateListener(){
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth){
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if(user != null){
-                    getSupportActionBar().setTitle("Welcome, " + user.getDisplayName() + "!");
-                }else {
-                    getSupportActionBar().setTitle(R.string.app_name);
-                }
-            }
-        };
         //View clickListeners
-        mButtonMain.setOnClickListener(this);
-        //
-
+//        mButtonMain.setOnClickListener(this);
     }
 
     //clicklisteners actions onClick
     @Override
     public void onClick(View v) {
-        if (v == mButtonMain) {
-
-            if (mEditTextMain.getText().toString().isEmpty()) {
-                Toast.makeText(MainActivity.this, "Text is Required", Toast.LENGTH_LONG).show();
-                mEditTextMain.setError("Search Text is Required");
-                Toast.makeText(MainActivity.this, "Text is Required", Toast.LENGTH_LONG).show();
-            }else {
-                String myNameIs = mEditTextMain.getText().toString();
-//                Intent intent = new Intent(MainActivity.this, BeersActivity.class);
-                Intent other = new Intent(MainActivity.this, OtherList.class);
-                //pass data with intent extras
-//                intent.putExtra("myName", myNameIs);
-                other.putExtra("myName", myNameIs);
-                //go to search activity
-//                startActivity(intent);
-                startActivity(other);
-                Toast.makeText(MainActivity.this, "Welcome " + myNameIs+"!", Toast.LENGTH_LONG).show();
-            }
-
-        }
+        //
+        //
     }
     //inflate menu
     @Override
