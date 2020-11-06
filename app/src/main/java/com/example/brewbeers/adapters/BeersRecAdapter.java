@@ -20,25 +20,25 @@ import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
-public class BeersAdapter extends RecyclerView.Adapter<BeersAdapter.ViewHolder> {
+public class BeersRecAdapter extends RecyclerView.Adapter<BeersRecAdapter.ViewHolder> {
 
     private ArrayList<BeersModel> beersModels = new ArrayList<>();
     private Context context;
 
-    public BeersAdapter(Context context, ArrayList<BeersModel> beersModels) {
+    public BeersRecAdapter(Context context, ArrayList<BeersModel> beersModels) {
         this.context = context;
         this.beersModels = beersModels;
     }
 
     @NonNull
     @Override
-    public BeersAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public BeersRecAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.beers_list_item,parent,false);
-        return new BeersAdapter.ViewHolder(view);
+        return new BeersRecAdapter.ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull BeersAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull BeersRecAdapter.ViewHolder holder, int position) {
         holder.beerName.setText(beersModels.get(position).getName());
         holder.beerTag.setText(beersModels.get(position).getTagline());
         holder.beerDescription.setText(beersModels.get(position).getFirstBrewed());

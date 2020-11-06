@@ -1,38 +1,31 @@
 package com.example.brewbeers.ui.lists;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.example.brewbeers.Constants;
 import com.example.brewbeers.R;
-import com.example.brewbeers.adapters.FirebaseCharListAdapter;
-import com.example.brewbeers.adapters.MyViewHolder;
+import com.example.brewbeers.adapters.FirebaseRecAdapter;
 import com.example.brewbeers.models.BeersModel;
 import com.example.brewbeers.util.OnStartDragListener;
 import com.example.brewbeers.util.SimpleItemTouchHelperCallback;
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
-import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SavedList extends AppCompatActivity implements OnStartDragListener {
     private DatabaseReference databaseReference;
-    private FirebaseCharListAdapter mFirebaseAdapter;
+    private FirebaseRecAdapter mFirebaseAdapter;
     private ItemTouchHelper mItemTouchHelper;
 
     @BindView(R.id.savedBeerRecycler) RecyclerView mRecyclerView;
@@ -62,7 +55,7 @@ public class SavedList extends AppCompatActivity implements OnStartDragListener 
                         .setQuery(query, BeersModel.class)
                         .build();
 
-        mFirebaseAdapter = new FirebaseCharListAdapter(options, query, this, this);
+        mFirebaseAdapter = new FirebaseRecAdapter(options, query, this, this);
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mFirebaseAdapter);

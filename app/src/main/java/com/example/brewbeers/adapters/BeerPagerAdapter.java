@@ -9,10 +9,10 @@ import com.example.brewbeers.models.BeersModel;
 
 import java.util.List;
 
-public class CharPagerAdapter extends FragmentPagerAdapter {
+public class BeerPagerAdapter extends FragmentPagerAdapter {
     private List<BeersModel> mDocList;
 
-    public CharPagerAdapter(FragmentManager fm, int behavior, List<BeersModel> restaurants) {
+    public BeerPagerAdapter(FragmentManager fm, int behavior, List<BeersModel> restaurants) {
         super(fm, behavior);
         mDocList = restaurants;
     }

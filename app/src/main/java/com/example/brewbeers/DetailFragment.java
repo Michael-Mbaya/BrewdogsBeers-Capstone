@@ -1,8 +1,6 @@
 package com.example.brewbeers;
 
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,9 +29,9 @@ public class DetailFragment extends Fragment implements View.OnClickListener{
     @BindView(R.id.nameTextView) TextView mName;
     @BindView(R.id.raceTextView) TextView mRace;
     @BindView(R.id.realmTextView) TextView mRealm;
-    @BindView(R.id.wikiTextView) TextView mWiki;
-    @BindView(R.id.birthTextView) TextView mBirth;
-    @BindView(R.id.deathTextView) TextView mDeath;
+    @BindView(R.id.describeFrag) TextView mWiki;
+    @BindView(R.id.tagTextFrag) TextView mBirth;
+    @BindView(R.id.firstBrewFrag) TextView mDeath;
     @BindView(R.id.saveButton) Button mSaveCharacter;
 
     private BeersModel mCharacter;
@@ -58,7 +56,7 @@ public class DetailFragment extends Fragment implements View.OnClickListener{
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_char_detail, container, false);
+        View view = inflater.inflate(R.layout.frag_beer_detail, container, false);
         ButterKnife.bind(this, view);
 
         Picasso.get().load(mCharacter.getImageUrl()).into(mImge);
@@ -88,14 +86,9 @@ public class DetailFragment extends Fragment implements View.OnClickListener{
             String pushId = pushRef.getKey();
             mCharacter.setPushId(pushId);
             pushRef.setValue(mCharacter);
-//            databaseReference.push().setValue(mCharacter);
             Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
         }
-//        if(v==mWiki){
-//            Intent webIntent = new Intent(Intent.ACTION_VIEW,
-//                    Uri.parse(mCharacter.getWikiUrl()));
-//            startActivity(webIntent);
-//        }
+
     }
 }
 

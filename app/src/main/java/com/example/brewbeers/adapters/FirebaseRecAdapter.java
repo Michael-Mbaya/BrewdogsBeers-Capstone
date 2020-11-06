@@ -27,7 +27,7 @@ import org.parceler.Parcels;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class FirebaseCharListAdapter extends FirebaseRecyclerAdapter<BeersModel, MyViewHolder> implements ItemTouchHelperAdapter {
+public class FirebaseRecAdapter extends FirebaseRecyclerAdapter<BeersModel, MyViewHolder> implements ItemTouchHelperAdapter {
 
     private Query mRef;
     private OnStartDragListener mOnStartDragListener;
@@ -36,10 +36,10 @@ public class FirebaseCharListAdapter extends FirebaseRecyclerAdapter<BeersModel,
     private ChildEventListener mChildEventListener;
     private ArrayList<BeersModel> mCharacters = new ArrayList<>();
     //
-    public FirebaseCharListAdapter(FirebaseRecyclerOptions<BeersModel> options,
-                                   Query ref,
-                                   OnStartDragListener onStartDragListener,
-                                   Context context){
+    public FirebaseRecAdapter(FirebaseRecyclerOptions<BeersModel> options,
+                              Query ref,
+                              OnStartDragListener onStartDragListener,
+                              Context context){
         super(options);
         mRef = ref.getRef();
         mOnStartDragListener = onStartDragListener;

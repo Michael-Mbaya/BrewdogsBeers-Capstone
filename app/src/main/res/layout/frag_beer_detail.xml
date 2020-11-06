@@ -11,23 +11,37 @@
         android:layout_height="match_parent"
         android:layout_marginTop="5dp"
         android:background="@color/neutral"
-        android:orientation="vertical"
-        android:paddingTop="5dp">
+        android:orientation="vertical">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="294dp">
 
             <ImageView
                 android:id="@+id/eyeSauronImage"
-                android:layout_width="0dp"
-                android:layout_height="200dp"
+                android:layout_width="111dp"
+                android:layout_height="wrap_content"
                 android:src="@drawable/beer_placeholder"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/describeFrag"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/describeFrag"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Description"
+                android:textColor="@color/blackest"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/eyeSauronImage"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -38,110 +52,102 @@
 
             <TextView
                 android:id="@+id/tagLabel"
-                android:layout_width="192dp"
-                android:layout_height="0dp"
-                android:layout_marginTop="4dp"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="8dp"
                 android:fontFamily="@font/fallingsky"
                 android:gravity="center"
-                android:paddingEnd="20dp"
                 android:text="Tagline:"
                 android:textColor="@color/blackest"
                 android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/tagTextFrag"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
 
             <TextView
                 android:id="@+id/nameTextView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginBottom="16dp"
                 android:fontFamily="@font/droid_serif"
                 android:gravity="center"
                 android:text="NameText"
                 android:textColor="@color/brownBrewsdog"
                 android:textSize="20dp"
+                app:layout_constraintBottom_toTopOf="@+id/tagLabel"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/labelRace"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="8dp"
                 android:fontFamily="@font/fallingsky"
-                android:gravity="center|end"
-                android:paddingEnd="20dp"
-                android:text="Alcohol by volume:"
+                android:gravity="center"
+                android:text="Alcohol Volume:"
                 android:textColor="@color/blackest"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toStartOf="@+id/raceTextView"
-                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tagLabel" />
+                app:layout_constraintTop_toBottomOf="@+id/tagTextFrag" />
 
             <TextView
                 android:id="@+id/raceTextView"
-                android:layout_width="230dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_width="200dp"
+                android:layout_height="30dp"
                 android:fontFamily="@font/smartwatch"
-                android:gravity="center_vertical"
+                android:gravity="center"
                 android:paddingStart="15dp"
                 android:text="AbvText"
                 android:textColor="@color/brownBrewsdog"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintHorizontal_bias="0.995"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tagLabel" />
 
             <TextView
                 android:id="@+id/realmTextView"
-                android:layout_width="230dp"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="8dp"
                 android:fontFamily="@font/smartwatch"
-                android:gravity="center_vertical"
+                android:gravity="center"
                 android:paddingStart="15dp"
                 android:text="TipsText"
                 android:textColor="@color/brownBrewsdog"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/labelRace" />
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/firstBrewFrag" />
 
             <TextView
                 android:id="@+id/labelRealm"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="8dp"
                 android:fontFamily="@font/fallingsky"
-                android:gravity="center|end"
+                android:gravity="center"
                 android:paddingEnd="20dp"
                 android:text="Brewer Tips:"
                 android:textColor="@color/blackest"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toStartOf="@+id/realmTextView"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/labelRace" />
-
-            <TextView
-                android:id="@+id/wikiTextView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:padding="10dp"
-                android:text="Description"
-                android:textColor="@color/blackest"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+                app:layout_constraintTop_toBottomOf="@+id/firstBrewFrag" />
 
             <TextView
-                android:id="@+id/birthTextView"
-                android:layout_width="223dp"
+                android:id="@+id/tagTextFrag"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="8dp"
                 android:fontFamily="@font/smartwatch"
                 android:gravity="center"
                 android:paddingStart="15dp"
@@ -150,38 +156,25 @@
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/tagLabel"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
 
             <TextView
                 android:id="@+id/labelDeath"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
                 android:fontFamily="@font/fallingsky"
-                android:gravity="center|end"
-                android:paddingEnd="20dp"
+                android:gravity="center"
                 android:text="First Brewed On:"
                 android:textColor="@color/blackest"
                 android:textSize="18sp"
-                app:layout_constraintEnd_toStartOf="@+id/raceTextView"
-                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintBottom_toTopOf="@+id/labelRealm"
+                app:layout_constraintEnd_toStartOf="@+id/firstBrewFrag"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/wikiTextView" />
-
-            <TextView
-                android:id="@+id/deathTextView"
-                android:layout_width="230dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/smartwatch"
-                android:gravity="center_vertical"
-                android:paddingStart="15dp"
-                android:text="FirstBrewedText"
-                android:textColor="@color/brownBrewsdog"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/wikiTextView" />
+                app:layout_constraintTop_toBottomOf="@+id/raceTextView"
+                app:layout_constraintVertical_bias="0.35" />
 
             <Button
                 android:id="@+id/saveButton"
@@ -193,20 +186,21 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/labelDeath" />
+                app:layout_constraintTop_toBottomOf="@+id/realmTextView" />
 
             <TextView
-                android:id="@+id/textView3"
-                android:layout_width="240dp"
+                android:id="@+id/firstBrewFrag"
+                android:layout_width="200dp"
                 android:layout_height="30dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/smartwatch"
                 android:gravity="center"
-                android:text="Description"
-                android:textAlignment="gravity"
-                android:textColor="@color/colorPrimary"
-                android:textStyle="bold"
+                android:text="FirstBrewedText"
+                android:textColor="@color/brownBrewsdog"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/labelRealm" />
+                app:layout_constraintStart_toEndOf="@+id/labelDeath"
+                app:layout_constraintTop_toBottomOf="@+id/raceTextView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

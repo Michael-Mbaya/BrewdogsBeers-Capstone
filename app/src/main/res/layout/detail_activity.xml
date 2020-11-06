@@ -108,7 +108,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/labelRace" />
 
             <TextView
-                android:id="@+id/wikiTextView"
+                android:id="@+id/describeFrag"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:gravity="center"
@@ -132,10 +132,10 @@
                 app:layout_constraintEnd_toStartOf="@+id/raceTextView"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/wikiTextView" />
+                app:layout_constraintTop_toBottomOf="@+id/describeFrag" />
 
             <TextView
-                android:id="@+id/birthTextView"
+                android:id="@+id/tagTextFrag"
                 android:layout_width="263dp"
                 android:layout_height="50dp"
                 android:fontFamily="@font/smartwatch"
@@ -147,7 +147,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/wikiTextView" />
+                app:layout_constraintTop_toBottomOf="@+id/describeFrag" />
 
             <TextView
                 android:id="@+id/labelDeath"
@@ -165,7 +165,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/labelBirth" />
 
             <TextView
-                android:id="@+id/deathTextView"
+                android:id="@+id/firstBrewFrag"
                 android:layout_width="263dp"
                 android:layout_height="50dp"
                 android:fontFamily="@font/smartwatch"
@@ -177,7 +177,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/birthTextView" />
+                app:layout_constraintTop_toBottomOf="@+id/tagTextFrag" />
 
             <Button
                 android:id="@+id/saveButton"

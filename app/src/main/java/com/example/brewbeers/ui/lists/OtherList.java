@@ -15,7 +15,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.brewbeers.R;
-import com.example.brewbeers.adapters.BeersAdapter;
+import com.example.brewbeers.adapters.BeersRecAdapter;
 import com.example.brewbeers.models.BeersModel;
 import com.example.brewbeers.network.BeerAPI;
 import com.example.brewbeers.network.BeerClient;
@@ -36,7 +36,7 @@ public class OtherList extends AppCompatActivity implements View.OnClickListener
     public static final String TAG = OtherList.class.getSimpleName();
 
     ArrayList<BeersModel> beersModels = new ArrayList<>();
-    private BeersAdapter beersAdapter;
+    private BeersRecAdapter beersAdapter;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     @BindView(R.id.beerButton) Button mBeers;
@@ -90,7 +90,7 @@ public class OtherList extends AppCompatActivity implements View.OnClickListener
             public void onResponse(Call<List<BeersModel>> call, Response<List<BeersModel>> response) {
                 Log.d("On Response","Got Response");
                 beersModels = new ArrayList<>(response.body());
-                beersAdapter = new BeersAdapter(OtherList.this,beersModels);
+                beersAdapter = new BeersRecAdapter(OtherList.this,beersModels);
                 mBeersRecycler.setAdapter(beersAdapter);
                 mBeersRecycler.setHasFixedSize(true);
             }

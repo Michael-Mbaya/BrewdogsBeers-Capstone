@@ -7,8 +7,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.brewbeers.models.BeersModel;
-import com.example.brewbeers.adapters.CharPagerAdapter;
-import com.example.brewbeers.models.BeersModel;
+import com.example.brewbeers.adapters.BeerPagerAdapter;
 
 import org.parceler.Parcels;
 
@@ -20,7 +19,7 @@ import butterknife.ButterKnife;
 public class DetailActivity extends AppCompatActivity {
 
     @BindView(R.id.viewPager) ViewPager mViewPager;
-    private com.example.brewbeers.adapters.CharPagerAdapter adapterViewPager;
+    private BeerPagerAdapter adapterViewPager;
     List<BeersModel> mDocList;
 
     @Override
@@ -32,7 +31,7 @@ public class DetailActivity extends AppCompatActivity {
         mDocList = Parcels.unwrap(getIntent().getParcelableExtra("characters"));
         int startingPosition = getIntent().getIntExtra("position", 0);
 
-        adapterViewPager = new com.example.brewbeers.adapters.CharPagerAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, mDocList);
+        adapterViewPager = new BeerPagerAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, mDocList);
         mViewPager.setAdapter(adapterViewPager);
         mViewPager.setCurrentItem(startingPosition);
 
